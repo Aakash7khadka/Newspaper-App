@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+   {% for obj in object_list %}
+   
+    <div class ='container'>
+    
+         <div class="card">
+        {% comment %} <img class="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap"> {% endcomment %}
+        <div class="card-body">
+            <a href='{% url 'article_detail' obj.pk%}'><h4 class="card-title">{{obj.title}}</h4></a>
+             <p class="text-muted">by:{{obj.author}}|{{obj.time}}</p>
+            <p class="card-text">{{obj.body}}</p>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
+    </div>
+        <br>
+    </div>
+   
+   {% endfor %}
+   
+{% endblock content %}
+
